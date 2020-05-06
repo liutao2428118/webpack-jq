@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout 后台</title>
+</head>
+
+<body>
+
+    <div class="layui-layout layui-layout-admin">
+        <%= require('html-loader!../../page-components/layout/index.html') %>
+
+        <div class="layui-body">
+            <div class="body-box">
+                <div class="layui-tab" lay-filter="tabDem">
+                    <ul class="layui-tab-title">
+                        <li lay-id="1" class="layui-this">待处理</li>
+                        <li lay-id="2">全部</li>
+                        <li lay-id="3">分配</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="search-form"></div>
+                        <table class="layui-hide" id="tabledemo" lay-filter="test"></table>
+
+                        <a href="./detail.html?status=500" class="layui-btn">查看详情</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- 头部搜索表单模板 -->
+<%= require('html-loader!../../page-components/search-form/index.html') %>

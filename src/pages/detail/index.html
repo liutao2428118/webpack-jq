@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detail</title>
+</head>
+
+<body>
+    <div class="layui-layout layui-layout-admin">
+        <%= require('html-loader!../../page-components/layout/index.html') %>
+
+        <div class="layui-body">
+            <div class="body-box">
+                <h3>我详情页</h3>
+                <div class="layui-tab" lay-filter="tabDem">
+                    <ul class="layui-tab-title">
+                        <li lay-id="1">家庭成员</li>
+                        <li lay-id="2">主申信息</li>
+                        <li lay-id="3">待审核资料</li>
+                        <li lay-id="4">待提交全部</li>
+                        <li lay-id="5">待完成</li>
+                        <li lay-id="6">咨询联系</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item">
+                            <%= require('html-loader!../../page-components/detail-children/family/index.html') %>
+                        </div>
+                        <div class="layui-tab-item">
+                            <%= require('html-loader!../../page-components/detail-children/main/index.html') %>
+                        </div>
+                        <div class="layui-tab-item">
+                            <%= require('html-loader!../../page-components/detail-children/audit/index.html') %>
+                        </div>
+                        <div class="layui-tab-item">
+                            <%= require('html-loader!../../page-components/detail-children/submit-all/index.html') %>
+                        </div>
+                        <div class="layui-tab-item">
+                            <%= require('html-loader!../../page-components/detail-children/accomplish/index.html') %>
+                        </div>
+                        <div class="layui-tab-item">
+                            <%= require('html-loader!../../page-components/detail-children/advisory/index.html') %>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

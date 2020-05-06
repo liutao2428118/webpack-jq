@@ -1,0 +1,50 @@
+<script id="demo" type="text/html">
+    <form class="layui-form" action="" style="line-height: 60px;">
+        {{#  layui.each(d.list, function(index, item){ }}
+        <div class="layui-inline" style="line-height:0">
+            <label class="layui-form-label" >{{item.label}}</label>
+            {{#  if(item.type === 'input'){ }}
+            <div class="layui-input-inline">
+                <input type="text" name="{{item.key}}" required lay-verify="required" placeholder="请输入标题" autocomplete="off"
+                    class="layui-input">
+            </div>
+            {{#  } else if(item.type === 'select') { }}
+            <div class="layui-input-inline">
+                <select name="{{item.key}}" >
+                    <option value=""></option>
+                    {{#  layui.each(item.options, function(index, son){ }}
+                    <option value="{{son.value}}">{{son.key}}</option>
+                    {{#  }); }}
+                </select>
+            </div>
+            {{#  } else if(item.type === 'checkbox') { }}
+                <div class="layui-input-inline">
+                    <input type="checkbox" name="{{item.key}}" title="写作" lay-skin="primary">
+                    <input type="checkbox" name="{{item.key}}" title="阅读" checked  lay-skin="primary">
+                    <input type="checkbox" name="{{item.key}}" title="发呆" lay-skin="primary">
+                </div>
+        
+            {{#  } else if(item.type === 'switch') { }}
+                <div class="layui-input-inline">
+                    <input type="checkbox" name="{{item.key}}" lay-skin="switch">
+                </div>
+         
+            {{#  } else if(item.type === 'radio') { }}
+                <div class="layui-input-inline">
+                    <input type="radio" name="{{item.key}}"" value="男" title="男">
+                    <input type="radio" name="{{item.key}}" value="女" title="女" checked>
+                </div>
+            {{#  } else if(item.type === 'date') { }}
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" name="{{item.key}}" id="{{item.elemid}}">
+            </div>
+            {{#  }  }}
+        </div>
+        {{#  }); }}
+        <div class="layui-inline">
+            <div class="layui-input-inline">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
+            </div>
+        </div>
+    </form>
+</script>
