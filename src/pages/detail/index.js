@@ -1,6 +1,8 @@
 import './index.styl'
 
-const R = require('ramda')
+// const R = require('ramda')
+
+import * as R from 'ramda'
 import { getUrlParam } from '../../assets/js/uit'
 
 // 状态对应的要显示的数组
