@@ -9,12 +9,12 @@ module.exports = function (api) {
               chrome: "67",
               safari: "11.1"
           },
-          // corejs:3,
+          corejs:2,
           useBuiltIns: "usage",
       }]
   ];
   const plugins = [
-    // ["@babel/plugin-transform-runtime", {corejs:3}]
+    ["@babel/plugin-transform-runtime"]
   ];
   return {
       presets,

@@ -37,7 +37,7 @@ module.exports = {
     module: {
         rules: [{
             test: /\.js$/,
-            exclude: /(node_modules)/, // 加快编译速度，不包含node_modules文件夹内容
+            exclude: /node_modules|lib/, // 加快编译速度，不包含node_modules文件夹内容
             use: [{
                 loader: 'babel-loader', // babel-loader版本不一样会出现很多坑，如果以后遇到报错，首先对照下以前项目的版本
                 options: {
